@@ -1,11 +1,9 @@
-let borrow:number= document.querySelector('#borrow').value;
-let salary:number = document.querySelector('#salary').value;
-let repay:number = document.querySelector('#repay').value;
-
 let submit= document.querySelector('#calculate');
 submit.addEventListener('click', function(e) {
     e.preventDefault();
-    console.log(totalCost(borrow))
+    let borrow:number= document.querySelector('#borrow').value;
+    let salary:number = document.querySelector('#salary').value;
+    let repay:number = document.querySelector('#repay').value;
     document.querySelector('.totalBorrow').innerHTML = `${totalCost(borrow)}`;
     document.querySelector('.adminFee').innerHTML = `${adminCharge(borrow)}`;
     document.querySelector('.repayRate').innerHTML = `${repay}`;
