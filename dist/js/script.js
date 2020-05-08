@@ -5,17 +5,17 @@ submit.addEventListener('click', function (e) {
     var salary = document.querySelector('#salary').value;
     var repay = document.querySelector('#repay').value;
     document.querySelector('.totalBorrow').innerHTML = "" + totalCost(borrow);
-    document.querySelector('.adminFee').innerHTML = "" + adminCharge(borrow);
+    document.querySelector('.adminFee').innerHTML = "" + adminCharge(totalCost(borrow));
     document.querySelector('.repayRate').innerHTML = "" + repay;
     document.querySelector('.salary').innerHTML = "" + salary;
     document.querySelector('.repayMonths').innerHTML = "" + monthsToRepay(repayPercentage(repay), salary, totalCost(borrow));
 });
 function totalCost(borrowAmount) {
     if (borrowAmount > 7200) {
-        var toBorrow = borrowAmount + 1000;
+        var toBorrow = borrowAmount += 1000;
     }
     else if (borrowAmount > 6480 && borrowAmount <= 7200) {
-        var toBorrow = borrowAmount + 500;
+        var toBorrow = borrowAmount += 500;
     }
     else {
         var toBorrow = borrowAmount;

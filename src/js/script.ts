@@ -5,7 +5,7 @@ submit.addEventListener('click', function(e) {
     let salary:number = document.querySelector('#salary').value;
     let repay:number = document.querySelector('#repay').value;
     document.querySelector('.totalBorrow').innerHTML = `${totalCost(borrow)}`;
-    document.querySelector('.adminFee').innerHTML = `${adminCharge(borrow)}`;
+    document.querySelector('.adminFee').innerHTML = `${adminCharge(totalCost(borrow))}`;
     document.querySelector('.repayRate').innerHTML = `${repay}`;
     document.querySelector('.salary').innerHTML = `${salary}`;
     document.querySelector('.repayMonths').innerHTML = `${monthsToRepay(repayPercentage(repay), salary, totalCost(borrow))}`;
@@ -13,9 +13,9 @@ submit.addEventListener('click', function(e) {
 
 function totalCost(borrowAmount:number) {
     if (borrowAmount >7200) {
-        var toBorrow:number = borrowAmount + 1000;
+        var toBorrow:number = borrowAmount += 1000;
     } else if (borrowAmount >6480 && borrowAmount<=7200) {
-        var toBorrow:number = borrowAmount + 500;
+        var toBorrow:number = borrowAmount += 500;
     } else {
         var toBorrow:number = borrowAmount;
     }
