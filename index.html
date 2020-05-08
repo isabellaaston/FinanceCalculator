@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="dist/css/style.css">
+    <script src="dist/js/script.js" defer></script>
+    <title>Mayden Academy | Funding</title>
+  </head>
+  <body>
+  <div class="container">
+    <div class="row">
+       <div class="col-12">
+        <p><span>The upfront course fee for the Full Stack Track is £8,000* (*£10k from January 2021), however, depending on how much you borrow the total fee can change.</span></p>
+          <p>EdAid charge a 5% admin fee on any money borrowed.</p>
+          
+          <span><p>e.g. If you borrow £6,000, you pay a £300 admin fee upfront. This does not go towards the cost of the course, and is a fee charged by EdAid, not Mayden Academy.</p></span>
+          <ul>
+            <li><span>If you borrow up to 80%, the course fee is £8,000 (+ 5% EdAid admin fee)</span></li>
+            <li><span style="font-weight: 400;">If you borrow 81% – 90%, the course fee is £8,500 (+ 5% EdAid admin fee)</span></li>
+            <li><span style="font-weight: 400;">If you borrow over 90%, the course fee is £9,000 (+ 5% EdAid admin fee)</span></li>
+          </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-6 questions">
+        <form>
+          <div class="row">
+            <div class="col-12">
+              <div class="form-group">
+                <label for="borrow">How much do you want to borrow?</label><br>
+                <input type="number" class="form-control" id="borrow">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="form-group">
+                <label for="salary">What is your expected salary?</label><br>
+                <input type="number" class="form-control" id="salary">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="form-group">
+                <label for="repay">Monthly repayment percentage</label><br>
+                <input type="number" class="form-control" id="repay">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <div class="form-group">
+                <input type="submit" class="form-control" value="Calculate!" id="calculate">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-6 calculation hidden">
+        <div class="col-12 total">
+          <p>You will be borrowing a total of: £<p class="totalBorrow"></p></p>
+        </div>
+        <div class="col-12 fee">
+          <p>You will need to pay an upfront fee of: <p class="adminFee"></p></p>
+        </div>
+        <div class="col-12 months">
+          <p>If you pay back <p class="repayRate"></p>% of your salary, and earn an annual salary of £<p class="salary"></p> it will take you <p class="repayMonths"></p> months to pay back.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>
