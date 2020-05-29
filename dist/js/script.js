@@ -1,9 +1,9 @@
 var submit = document.querySelector('#calculate');
 submit.addEventListener('click', function (e) {
     e.preventDefault();
-    var borrow = document.querySelector('#borrow').value;
-    var salary = document.querySelector('#salary').value;
-    var repay = document.querySelector('#repay').value;
+    var borrow = parseFloat(document.querySelector('#borrow').value);
+    var salary = parseFloat(document.querySelector('#salary').value);
+    var repay = parseFloat(document.querySelector('#repay').value);
     document.querySelector('.totalBorrow').innerHTML = "" + totalCost(borrow);
     document.querySelector('.adminFee').innerHTML = "" + adminCharge(totalCost(borrow));
     document.querySelector('.repayRate').innerHTML = "" + repay;
@@ -12,10 +12,10 @@ submit.addEventListener('click', function (e) {
 });
 function totalCost(borrowAmount) {
     if (borrowAmount > 7200) {
-        var toBorrow = borrowAmount += 1000;
+        var toBorrow = borrowAmount + 1000;
     }
     else if (borrowAmount > 6480 && borrowAmount <= 7200) {
-        var toBorrow = borrowAmount += 500;
+        var toBorrow = borrowAmount + 500;
     }
     else {
         var toBorrow = borrowAmount;
